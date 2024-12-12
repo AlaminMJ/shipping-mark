@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      table {
+        width: 100%;
+        text-align: center;
+        /* border: 1px solid black; */
+        border-collapse: collapse;
+      }
+      table td {
+        border: 1px solid black;
+        padding: 8px;
+        font-size: 1rem;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    </style>
+  </head>
+  <body>
+
+    <table>
+        <tr>
+            <td colspan="4" >
+                <div>SENDER</div>
+                <!-- <h4 style="margin:10PX 0 90PX 0;font-size:1.4rem;font-weight: 500;"><%= item.SENDER %></h2> -->
+            <h1 style="margin:60px 0 90px 0;font-size:1.9rem;font-weight: 500;"><%= item.SENDER %></h2>
+                </td>
+            <td colspan="7" style="padding: 5px 0px;">
+                <div>CUSTOMER</div>
+                <h1 style="margin:30PX 0 20PX 0;font-size: 30PX;font-weight: 700;"><%= item.CUSTOMER %></h1>
+                <div style="border-top: 1px solid; margin: 10PX 0;">CARTONS NUMBER/TOTAL  <br> /</div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>REFERENCE</td>
+            <td>COLOR</td>
+            <td>XS&nbsp&nbsp</td>
+            <td>S&nbsp&nbsp</td>
+            <td>M&nbsp&nbsp</td>
+            <td>L&nbsp&nbsp</td>
+            <td>XL&nbsp&nbsp</td>
+            <td>XXL</td>
+            <td>3XL</td>
+            <td>4XL</td>
+            <td>TOTAL 
+            <br/>PCS</td>
+        </tr>
+        <tr>
+            <td>455</td>
+            <td style="max-width: 100px;"><%= item.COLOR %></td>
+            <td rowspan="2"><%= item.XS %></td>
+            <td rowspan="2"><%= item.S %></td>
+            <td rowspan="2"><%= item.M %></td>
+            <td rowspan="2"><%= item.L %></td>
+            <td rowspan="2"><%= item.LX %></td>
+            <td rowspan="2"><%= item.XXL %></td>
+            <td rowspan="2"><%= item["3XL"] %></td>
+            <td rowspan="2"><%= item['4XL'] %></td>
+            <td rowspan="2"><%= item.TOTAL %></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 15px 0;">NAWALA 025 SWEATER</td>
+        </tr>
+        <tr>
+            <td colspan="11" style="font-size: 40PX;font-weight: 700;">41074</td>
+        </tr>
+        
+    </table>
+            
+</body>
+</html>

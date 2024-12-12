@@ -1,0 +1,68 @@
+<div class="container">
+  <table>
+    <tr style="font-size: 1.6rem">
+      <td colspan="4" style="border-right: none">ORD:<%= item.Order %></td>
+      <td colspan="4" style="text-align: right; border-left: none">
+        <%= item.COC %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="8"><%= item.TG %></td>
+    </tr>
+    <tr>
+      <td colspan="8">
+        ART: <%= item.Style %>-<%= item.Style_2 %>
+        <span style="font-weight: 500; font-size: 14px"
+          >&nbsp;<%= item.Style_3 %></span
+        >
+      </td>
+    </tr>
+    <tr style="text-align: center">
+      <td rowspan="2">VAR.</td>
+      <td rowspan="2">COLOR</td>
+      <td colspan="6" style="font-size: 14px">SIZE</td>
+    </tr>
+    <tr style="text-align: center">
+      <td>&nbsp;S&nbsp;</td>
+      <td>&nbsp;M&nbsp;</td>
+      <td>&nbsp;L&nbsp;</td>
+      <td>&nbsp;XL</td>
+      <td>2XL</td>
+      <td>3XL</td>
+    </tr>
+    <tr style="text-align: center; padding: 10px 0">
+      <td><%= item.Color %></td>
+      <td><%= item.Color_name %></td>
+      <td><%= item.S %></td>
+      <td><%= item.M %></td>
+      <td><%= item.L %></td>
+      <td><%= item.XL %></td>
+      <td><%= item.XXL %></td>
+      <td><%= item.XXXL %></td>
+    </tr>
+    <tr>
+      <td colspan="3">MISURE: <%= item.BoxMeasure %></td>
+      <td colspan="5" style="font-size: 1.1rem; line-height: 30px">
+        <p>GROSS WEIGHT : <%= item.GWeight %></p>
+        <p>NET WEIGHT :<%= item.NWeight %></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        TOTALE PZ.&nbsp;&nbsp;&nbsp;&nbsp; <%= item.PCS_CTN %>
+      </td>
+      <td colspan="5">
+        BOX N<sup style="font-size: 1rem">o</sup> <%= item.QTY %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="8" style="text-align: center">
+        TOTAL NUMBER
+        BOX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /
+      </td>
+    </tr>
+  </table>
+  <span style="font-size: 10px; color: rgb(209, 209, 209); margin-top: 20px"
+    ><%= item.CTN %></span
+  >
+</div>

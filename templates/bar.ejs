@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      td {
+        border: 1px solid;
+        padding: 5px 10px;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <tr style="font-size: 1.6rem">
+          <td colspan="4" style="border-right: none">ORD:</td>
+          <td colspan="4" style="text-align: right; border-left: none">
+            COC-10
+          </td>
+        </tr>
+        <tr>
+          <td colspan="8">TG20</td>
+        </tr>
+        <tr>
+          <td colspan="8">ART:</td>
+        </tr>
+        <tr style="text-align: center">
+          <td rowspan="2">VAR</td>
+          <td rowspan="2">COLOR</td>
+          <td colspan="6">SIZE</td>
+        </tr>
+        <tr style="text-align: center">
+          <td>&nbsp;S&nbsp;</td>
+          <td>&nbsp;M&nbsp;</td>
+          <td>&nbsp;L&nbsp;</td>
+          <td>&nbsp;XL</td>
+          <td>2XL</td>
+          <td>3XL</td>
+        </tr>
+        <tr style="text-align: center; padding: 10px 0">
+          <td>46305</td>
+          <td>khaky</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>20</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td colspan="3">MISURE: 62X42X40 cm</td>
+          <td colspan="5" style="font-size: 1.1rem; line-height: 30px">
+            <p>GROSS WEIGHT :</p>
+            <p>NET WEIGHT :</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">TOTALE PZ.&nbsp;&nbsp;&nbsp;&nbsp; 20</td>
+          <td colspan="5">BOX N<sup style="font-size: 1rem">o</sup></td>
+        </tr>
+        <tr>
+          <td colspan="8" style="text-align: center">
+            TOTAL NUMBER BOX&nbsp;&nbsp;&nbsp;105/272
+          </td>
+        </tr>
+      </table>
+      <div>
+        <svg id="barcode"></svg>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"
+      integrity="sha512-k2wo/BkbloaRU7gc/RkCekHr4IOVe10kYxJ/Q8dRPl7u3YshAQmg3WfZtIcseEk+nGBdK03fHBeLgXTxRmWCLQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      JsBarcode("#barcode", "01610132213", {
+        height: 50,
+      });
+    </script>
+  </body>
+</html>

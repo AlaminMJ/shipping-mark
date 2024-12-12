@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cross Border Div</title>
+    <style>
+      body {
+        margin: 10px;
+      }
+
+      .cb {
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+        overflow: hidden;
+        width: 200px;
+        min-width: 200px;
+      }
+      .cb::before {
+        content: "";
+        position: absolute;
+        width: 1100%;
+        height: 1px;
+        display: block;
+        bottom: 0;
+        top: 0;
+        transform: rotate(14deg);
+        transform-origin: left bottom;
+        background-color: black;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        /* font-weight: 600; */
+      }
+      .t-left {
+        text-align: left;
+      }
+      td {
+        border: 1px solid;
+        padding: 5px 10px;
+      }
+      .bd-no {
+        margin-top: 20px;
+      }
+      .bd-no td {
+        border: none;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      img{
+        width: 200PX;
+        height: auto;
+      }
+          .d-flex{
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        align-items: center;
+        color:rgb(198, 198, 198);
+        margin-top: 10px;
+      }
+   
+    </style>
+  </head>
+  <body>
+   
+
+    <div class="conteainer">
+      <table>
+        <tr>
+          <td colspan="8">
+          <img src="https://res.cloudinary.com/dmfbnzjdu/image/upload/v1733900689/logo_lez7d2.png" alt="NAVIGARE" >
+          </td>
+          <td rowspan="3" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="t-left">DESCRIPTION:</td>
+          <td colspan="9"><%= item.data.items[0].Brand %></td>
+        </tr>
+        <tr>
+          <td colspan="10">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="t-left">STYLE CODE:</td>
+          <td colspan="5">GROSS WEIGHT:</td>
+          <td colspan="5">CARTON DIMENSION</td>
+        </tr>
+        <tr>
+          <td class="t-left"><%= item.data.items[0].Brand %></td>
+          <td colspan="5"><%= item.data.items[0].Brand %></td>
+          <td colspan="5"><%= item.data.items[0].Brand %></td>
+        </tr>
+        <tr>
+          <td class="t-left">STYLE CODE:</td>
+          <td colspan="5">GROSS WEIGHT:</td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td class="t-left"><%= item.data.items[0].Brand %></td>
+          <td colspan="5"><%= item.data.items[0].Brand %></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td colspan="11">&nbsp;</td>
+        </tr>
+        <!-- DATA -->
+        <tr style="height: 50px">
+          <td class="cb">
+            <p style="text-align: right; padding-right: 5px">SIZE</p>
+            <p style="text-align: left; padding-left: 5px">COLOR</p>
+          </td>
+          <td>S</td>
+          <td>M</td>
+          <td>L</td>
+          <td>XL</td>
+          <td>XXL</td>
+          <td>3XL</td>
+          <td>4XL</td>
+          <td>5XL</td>
+          <td>6XL</td>
+          <td>BOX QTY</td>
+        </tr>
+        <% item.data.items.forEach(function(d, i) { %>
+        <tr>
+          <td class="t-left"><%= d.Color %></td>
+          <td><%= d.Color %></td>
+          <td><%= d.Color %></td>
+          <td><%= d.Color %></td>
+          <td><%= d.Color %></td>
+          <td><%= d.Color %></td>
+          <td><%= d.Color %></td>
+          <td><%= d.Color %></td>
+          <td><%= d.Color %></td>
+          <td><%= d.Color %></td>
+          <td>BOX QTY</td>
+        </tr>
+        <% });%>
+        <tr>
+          <td class="t-left">BOX NUMBER</td>
+          <td colspan="2">S</td>
+
+          <td colspan="5"></td>
+        </tr>
+      </table>
+        <div class="d-flex">
+        <span><%= item.items[0].CTN %></span>
+        <span><%= item.items[0].Shipping_Mode %></span>
+      </div>
+    </div>
+  
+  </body>
+</html>

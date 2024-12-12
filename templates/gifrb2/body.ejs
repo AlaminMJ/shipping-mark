@@ -1,0 +1,98 @@
+
+    
+    <div class="container" >
+      <h1 style="text-align: center; font-size: 1.4rem">GIFRAB ITALIA S.p.A</h1>
+      <h2 style="text-align: center; font-size: 1.2rem; margin: 5px 0">
+        ITALY
+      </h2>
+      <table>
+        <tr>
+          <td>BRAND</td>
+          <td style="width: 4px">:</td>
+          <td colspan="9"><%= item.data.items[0].Brand %></td>
+        </tr>
+        <tr>
+          <td>NEW COOP</td>
+          <td style="text-align: center">:</td>
+          <td colspan="9"><%= item.customer %></td>
+        </tr>
+        <tr>
+          <td>STYLE</td>
+          <td style="text-align: center">:</td>
+          <td colspan="9"><%= item.data.items[0].Style %></td>
+        </tr>
+        <tr>
+          <td>COLOR</td>
+          <td>:</td>
+          <td colspan="9"><%= item.data.items.map(d => d.Color).join(' & '); %></td>
+        </tr>
+
+        <tr>
+          <td>SIZE</td>
+          <td style="text-align: center">:</td>
+          <td style="text-align: center">&nbsp;S&nbsp;</td>
+          <td style="text-align: center">&nbsp;M&nbsp;</td>
+          <td style="text-align: center">&nbsp;L&nbsp;</td>
+          <td style="text-align: center">&nbsp;XL</td>
+          <td style="text-align: center">XXL</td>
+          <td style="text-align: center">3XL</td>
+          <td style="text-align: center">4XL</td>
+          <td style="text-align: center">TTL</td>
+          <td style="text-align: center">G. TOTAL</td>
+        </tr>
+        <% item.data.items.forEach(function(d, i) { %>
+        <tr>
+          <td><%= d.Color %></td>
+          <td style="text-align: center">:</td>
+          <td style="text-align: center"><%= d.S %></td>
+          <td style="text-align: center"><%= d.M %></td>
+          <td style="text-align: center"><%= d.L %></td>
+          <td style="text-align: center"><%= d.XL %></td>
+          <td style="text-align: center"><%= d.XXL %></td>
+          <td style="text-align: center"><%= d.XXXL %></td>
+          <td style="text-align: center"><%= d.XXXXL %></td>
+          <td style="text-align: center"><%= d.TTL %></td>
+          <% if (i === 0) { %>
+          <td style="text-align: center" rowspan="<%= item.data.items.length %>">
+            <%= item.data.sums.TTL %>
+          </td>
+          <% } %>
+        </tr>
+        <% });%>
+    
+        <tr class="bd-no">
+          <td style="padding-top: 30px">TOTAL QTY</td>
+          <td style="text-align: center; padding-top: 30px">:</td>
+          <td colspan="9" style="padding-top: 30px">
+            <%= item.data.sums.TTL %> &nbsp;&nbsp; PCS
+          </td>
+        </tr>
+        <tr class="bd-no">
+          <td>GROSS WEIGHT</td>
+          <td style="text-align: center">:</td>
+          <td colspan="9"><%= item.data.items[0].GrossWeight %>&nbsp;&nbsp;KGS</td>
+        </tr>
+        <tr class="bd-no">
+          <td>NET WEIGHT</td>
+          <td style="text-align: center">:</td>
+          <td colspan="9"><%= item.data.items[0].NetWeight %> &nbsp;&nbsp;KGS</td>
+        </tr>
+        <tr class="bd-no">
+          <td>CARTON ME.</td>
+          <td style="text-align: center">:</td>
+          <td colspan="9">63X40X13 CM</td>
+        </tr>
+        <tr class="bd-no">
+          <td>CARTON N<sup style="font-size: 0.6rem">o</sup></td>
+          <td style="text-align: center">:</td>
+          <td colspan="9">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+          </td>
+        </tr>
+      </table>
+      <h2 style="text-align: center; font-size: 1.2rem; margin-top: 10px;">
+        MADE IN BANGLADESH
+      </h2>
+    </div>
+  
+  

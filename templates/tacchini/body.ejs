@@ -1,0 +1,67 @@
+
+<table>
+    <tr>
+        <td colspan="4" >
+            <div>SENDER</div>
+            <% if (item.SENDER === 'MOVIN') { %> <h1 style="margin:60px 0 90px 0;font-size:1.9rem;font-weight: 500;"><%= item.SENDER %></h1> <% } else { %> <h4 style="margin:10px 0 90px 0;font-size:1.4rem;font-weight: 500;"><%= item.SENDER %></h4> <% } %>
+            <!-- <h4 style="margin:10PX 0 60PX 0;font-size:1.4rem;font-weight: 500;"><%= item.SENDER %></h2> -->
+        </td>
+        <td colspan="7" style="padding: 5px 0px;">
+            <div>CUSTOMER</div>
+            <h1 style="margin:20PX 0 20PX 0;font-size: 20PX;font-weight: 600;text-wrap: wrap;"><%= item.CUSTOMER %></h1>
+            <div style="border-top: 1px solid; margin: 10PX 0;">CARTONS NUMBER/TOTAL  <br> /</div>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>REFERENCE</td>
+        <td style="max-width: 400px; min-width: auto; padding: 5px 8px;">COLOR</td>
+        <td>XS&nbsp&nbsp</td>
+        <td>S&nbsp&nbsp</td>
+        <td>M&nbsp&nbsp</td>
+        <td>L&nbsp&nbsp</td>
+        <td>XL&nbsp&nbsp</td>
+        <td>XXL</td>
+        <td>3XL</td>
+        <!-- <td>4XL</td> -->
+        <td>TOTAL
+        <br/>PCS</td>
+    </tr>
+    <tr>
+        <td><%= item.REFERENCE %></td>
+        <td style="max-width: 400px; min-width: 200px; padding: 8px 8px; text-wrap: wrap;"><%= item.COLOR %></td>
+        <td rowspan="2"><%= item.XS %></td>
+        <td rowspan="2"><%= item.S %></td>
+        <td rowspan="2"><%= item.M %></td>
+        <td rowspan="2"><%= item.L %></td>
+        <td rowspan="2"><%= item.XL %></td>
+        <td rowspan="2"><%= item.XXL %></td>
+        <td rowspan="2"><%= item["XXXL"] %></td>
+        <!-- <td rowspan="2"><%= item['XXXXL'] %></td> -->
+        <td rowspan="2"><%= item.TOTAL %></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="padding: 15px 0;"><%= item.ITEM %></td>
+    </tr>
+    <tr>
+        <td colspan="11" style="font-size: 20px;font-weight: 600;"><%= item.REFERENCE %></td>
+    </tr>    
+</table>
+<p style="font-size: 10px ;color:rgb(202, 202, 202);;"><%= item.CTN %></p>
+<!-- {
+    "SL": "82",
+    "SENDER": "MOVIN",
+    "CUSTOMER": "PO : STAM251SRBVP (SV SERBIA)",
+    "ITEM": "HASHTAG HOODIE SWEATER",
+    "REFERENCE": "41116",
+    "COLOR": "2005 BLACK/WHITE",
+    "XS": "",
+    "S": "",
+    "M": "4",
+    "L": "5",
+    "XL": "3",
+    "XXL": "2",
+    "XXXL": "",
+    "XXXXL": "",
+    "TOTAL": "14"
+} -->

@@ -1,0 +1,86 @@
+ <div class="conteainer">
+      <table>
+        <tr>
+          <td colspan="8">
+          <img src="https://res.cloudinary.com/dmfbnzjdu/image/upload/v1733900689/logo_lez7d2.png" alt="NAVIGARE" >
+          </td>
+          <td rowspan="3" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="t-left">DESCRIPTION:</td>
+          <td colspan="7"><%= item.items[0].DESCRIPTION %></td>
+        </tr>
+        <tr>
+          <td colspan="10">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="t-left">STYLE CODE:</td>
+          <td colspan="5">GROSS WEIGHT:</td>
+          <td colspan="5">CARTON DIMENSION</td>
+        </tr>
+        <tr>
+          <td class="t-left"><%= item.items[0].STYLE_CODE %></td>
+          <td colspan="5"><%= item.sums.GWeight.toFixed(2) %> KG</td>
+          <td colspan="5"><%= item.items[0].BoxMeasure %></td>
+        </tr>
+        <tr>
+          <td class="t-left">GENDER:</td>
+          <td colspan="5">NET WEIGHT:</td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td class="t-left"><%= item.items[0].GENDER %></td>
+          <td colspan="5"><%= item.sums.NWeight.toFixed(2) %>  KG</td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td colspan="11">&nbsp;</td>
+        </tr>
+        <!--Data -->
+        <tr style="height: 50px">
+          <td class="cb">
+            <p style="text-align: right; padding-right: 5px">SIZE</p>
+            <p style="text-align: left; padding-left: 5px">COLOR</p>
+          </td>
+          <td>&nbsp;S&nbsp;</td>
+          <td>&nbsp;M&nbsp;</td>
+          <td>&nbsp;L&nbsp;</td>
+          <td>&nbsp;XL </td>
+          <td>XXL</td>
+          <td>3XL</td>
+          <td>4XL</td>
+          <td>5XL</td>
+          <td>6XL</td>
+          <td>BOX QTY</td>
+        </tr>
+        <% item.items.forEach(function(d, i) { %>
+        <tr>
+          <td class="t-left"><%= d.Color %></td>
+          <td><%= d.S %></td>
+          <td><%= d.M %></td>
+          <td><%= d.L %></td>
+          <td><%= d.XL %></td>
+          <td><%= d.XXL %></td>
+          <td><%= d.XXXL %></td>
+          <td><%= d.XXXXL %></td>
+          <td><%= d.XXXXXL %></td>
+          <td><%= d.XXXXXXL %></td>
+           <% if (i === 0) { %>
+          <td style="text-align: center" rowspan="<%= item.items.length %>">
+            <%= item.sums.PCS_CTN %>
+          </td>
+          <% } %>
+          <!-- <td><%= d.PCS_CTN %></td> -->
+        </tr>
+        <% });%>
+        <tr>
+          <td class="t-left">BOX NUMBER</td>
+          <td colspan="10" style="font-size: 30px;">&nbsp;</td>
+          <!-- <td colspan="10"><%= item.items[0].CTN %> / 84</td> -->
+        </tr>
+      </table>
+      <div class="d-flex">
+        <span><%= item.items[0].CTN %></span>
+        <span><%= item.items[0].Shipping_Mode %></span>
+      </div>
+    </div>
